@@ -17,13 +17,29 @@ public class HDFSCopyTest {
 		FSDataOutputStream hdfsout = null;
 		try {
 			hdfs = FileSystem.get(conf);
+			
 			Path inputPath = new Path(args[0]);
 			Path outputPath = new Path(args[1]);
-			hdfsin = hdfs.open(inputPath);
+			
+			/*hdfsin = hdfs.open(inputPath);
 			String input = hdfsin.readUTF();
 			
 			hdfsout = hdfs.create(outputPath);
-			hdfsout.writeUTF(input);
+			hdfsout.writeUTF(input);*/
+			
+			hdfsin = hdfs.open(inputPath);
+			hdfsout = hdfs.create(outputPath);
+			
+			while(true) {
+				int data = hdfsin.read();
+				System.out.println((char)data);
+				
+				if(data == -1)
+					break;
+				
+				hdfsout.write((char)data);
+			}
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
