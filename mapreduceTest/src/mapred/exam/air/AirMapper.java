@@ -17,13 +17,13 @@ public class AirMapper extends Mapper<LongWritable, Text, Text, IntWritable>{
 		if(key.get()>0) {
 			String[] line = value.toString().split(",");
 			if(!line[15].equals("NA")) {
-			if(line!=null & line.length >0) {
-			outputKey.set(line[1]);
-			int result = Integer.parseInt(line[15]); 	
-				if(result>0) {
-					context.write(outputKey, outputVal);
+				if(line!=null & line.length > 0) {
+					outputKey.set(line[1]);
+					int result = Integer.parseInt(line[15]); 	
+					if(result>0) {
+						context.write(outputKey, outputVal);
+					}
 				}
-			}
 			}
 		}
 	}
