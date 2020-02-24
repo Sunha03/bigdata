@@ -23,7 +23,9 @@ public class AirMultipleMapper extends Mapper<LongWritable, Text, Text, IntWrita
 				}else if(!line[14].equals("NA") && Integer.parseInt(line[14])>0)  {
 					outputKey.set("arrDelay," + line[1]);
 					context.write(outputKey, outputVal);
-				}else if(line[15].equals("NA")) {			//출발 지연
+				}
+
+				if(line[15].equals("NA")) {			//출발 지연
 					outputKey.set("depDelayNA," + line[1]);
 					context.write(outputKey, outputVal);
 				}else if(!line[15].equals("NA") && Integer.parseInt(line[15])>0)  {
