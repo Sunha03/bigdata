@@ -9,6 +9,6 @@
 <body>
 	<h1>자바나라</h1>
 	<hr/>
-	<img alt="" src="/bigdataShop/images/jang1.jpg">
+	<img alt="" src="/bigdataShop/images/park1.jpg">
 </body>
 </html>
