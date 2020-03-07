@@ -4,6 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="kr.mulit.bigdataShop">
+		<select id="allProduct" resultType="product">
+			select * from tb_product
+		</select>
+		
+		<select id="categoryProduct" parameterType="String" resultType="product">
+			select * from tb_product where category_no=#{category}
+		</select>
+		
 		<select id="hitproduct" resultType="product">
 			select p.*
 			from tb_product p, (select prd_no, rank() over (order by sum(qty) desc) ranking
@@ -16,5 +24,6 @@
 		<select id="newproduct" resultType="product">
 			select * from tb_product order by reg_dtm
 		</select>
+		
 	</mapper>
 

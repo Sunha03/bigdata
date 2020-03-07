@@ -13,6 +13,9 @@
 	</definition>
 	
 	<definition name="index" extends="mainTemplate"></definition>
+	<definition name="product/list" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/product/prdlist.jsp" />
+	</definition>
 	
 	<!-- admin페이지 
 		1. adminTemplate이란 이름으로 어드민페이지의 템플릿을 등록하세요

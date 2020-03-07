@@ -14,19 +14,22 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<ProductDTO> productlist(String category) {
-		// TODO Auto-generated method stub
-		return null;
+		List<ProductDTO> productList = dao.productlist(category);
+		
+		return productList;
 	}
 
 	@Override
 	public List<ProductDTO> hitproduct() {
 		List<ProductDTO> hitList = dao.hitproduct();
+		
 		return hitList;
 	}
 
 	@Override
 	public List<ProductDTO> newproduct() {
 		List<ProductDTO> newList = dao.newproduct();
+		
 		return newList;
 	}
 
