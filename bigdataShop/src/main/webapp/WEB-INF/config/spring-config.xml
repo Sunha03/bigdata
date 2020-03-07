@@ -38,7 +38,14 @@
 	</beans:bean>
 	
 	<!-- ==================mybatis연결========================== -->
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
+		<beans:property name="dataSource" ref="ds" />
+		<beans:property name="configLocation" value="/WEB-INF/config/mybatis-config.xml" />
+	</beans:bean>
 	
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" >
+		<beans:constructor-arg ref="sqlSessionFactory" />
+	</beans:bean>
 	
 	
 	

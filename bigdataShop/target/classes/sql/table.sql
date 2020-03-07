@@ -1,3 +1,4 @@
+create sequence ord_seq;
 
 DROP TABLE TB_REPLY CASCADE CONSTRAINTS;
 
@@ -167,6 +168,7 @@ CREATE TABLE TB_DLV_CORP (
        PRIMARY KEY (DLV_CORP_NO)
 );
 
+create sequence ord_seq;
 
 
 
