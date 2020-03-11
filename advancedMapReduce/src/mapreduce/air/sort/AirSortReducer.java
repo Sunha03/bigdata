@@ -9,6 +9,8 @@ import org.apache.hadoop.mapreduce.Reducer;
 public class AirSortReducer extends Reducer<CustomKey, IntWritable, CustomKey, IntWritable>{
 	IntWritable resultVal = new IntWritable();
 	CustomKey resultKey = new CustomKey();
+	Text appenddata = new Text();
+	String data = "";
 	
 	@Override
 	protected void reduce(CustomKey key, Iterable<IntWritable> values,
@@ -17,10 +19,19 @@ public class AirSortReducer extends Reducer<CustomKey, IntWritable, CustomKey, I
 		
 		//month 데이터를 추출
 		Integer beforeMonth = key.getMonth();
+		data = data + "reduce호출";
+		appenddata.set(data);
+		int count = 0;
 		
 		for(IntWritable value:values) {
+			if(count < 10) {
+				System.out.println("reduce > " + key);
+				count++;
+			}
+			
 			if(beforeMonth != key.getMonth()) {
-				resultKey.setYear(key.getYear());
+				resultKey.setYear(key.getYear() + ", " + appenddata + "(test), " 
+									+ key.hashCode() + "(hashcode), " + key.getMapkey() + "(mapkey)");
 				resultKey.setMonth(beforeMonth);
 				resultVal.set(sum);
 				sum = 0;

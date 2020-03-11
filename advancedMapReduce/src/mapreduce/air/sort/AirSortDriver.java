@@ -38,7 +38,7 @@ public class AirSortDriver extends Configured implements Tool{
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
 		
-		job.setOutputKeyClass(Text.class);
+		job.setOutputKeyClass(CustomKey.class);
 		job.setOutputValueClass(IntWritable.class);
 		
 		FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
