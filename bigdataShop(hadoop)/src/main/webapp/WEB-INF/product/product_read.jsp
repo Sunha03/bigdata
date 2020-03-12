@@ -261,21 +261,17 @@ A.info:hover {
 		</div>
 	
 		<!-- =================댓글등록화면과 조회화면================================= -->
-		<form method="post" 
-				action="/bigdataShop/comment/write.do">
-				<input type="hidden" name="prd_no" 
-					value="${product.prd_no }"/>
-				<!-- 세션에 있는 로그인 아이디 정보를 꺼내서 넣어야 하나 임의로 
-				   바꿔가며 테스트 한다. -->
-				<input type="hidden" name="mem_id" 	value="lee"/>
+		<form method="post" action="/bigdataShop/comment/write.do">
+			<input type="hidden" name="prd_no" value="${product.prd_no }"/>
 			
-				<textarea rows="2" cols="100" name="pro_comment"></textarea>
-						<input type="submit" value="등록"/>
+			<!-- 세션에 있는 로그인 아이디 정보를 꺼내서 넣어야 하나 임의로 바꿔가며 테스트 한다. -->
+			<input type="hidden" name="mem_id" 	value="lee"/>
+			<textarea rows="2" cols="100" name="pro_comment"></textarea>
+			<input type="submit" value="등록"/>
+			
 			<table border="1" style="border-collapse: collapse">
-				<!-- 댓글리스트를 출력 (ProductController read메소드에서
-				 comment list정보를 같이 조회
-				 EL &JSTL로 commentlist의 정보를 출력하기
-				 -->
+				<!-- 댓글리스트를 출력 (ProductController read메소드에서 comment list정보를 같이 조회
+				 		EL &JSTL로 commentlist의 정보를 출력하기-->
 				 <c:if test="${!empty commentlist}">
 			 		<c:forEach var="comment" items="${commentlist}">
 			 			<tr>
