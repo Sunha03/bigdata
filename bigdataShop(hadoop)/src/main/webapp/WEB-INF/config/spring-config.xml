@@ -16,6 +16,7 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/images/**" location="/WEB-INF/static/images/" />
 	<resources mapping="/common/**" location="/WEB-INF/static/common/" />
+	<resources mapping="/jQCloud-master/**" location="/WEB-INF/jQCloud-master/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->

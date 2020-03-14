@@ -21,4 +21,13 @@ public class ProductCommentController {
 		
 		return "redirect:/product/read.do?prd_no=" + comment.getPrd_no();
 	}
+	
+	//댓글 wordcount 결과 출력
+	@RequestMapping("/comment/result")
+	public String getCommentResult(Model model,HttpServletRequest req) {
+		List<CommentResultDTO> commentResult = service.getCommentResult();
+		model.addAttribute("commentResult", commentResult);
+		
+		return "comment/result";
+	}
 }
