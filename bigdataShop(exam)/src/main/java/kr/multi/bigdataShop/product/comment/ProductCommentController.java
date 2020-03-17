@@ -19,7 +19,7 @@ public class ProductCommentController {
 		System.out.println("[comment] prd_no => " + prd_no);
 		
 		ModelAndView mav = new ModelAndView();
-		List<ProductCommentDTO> list = service.productlist(prd_no);
+		List<ProductCommentDTO> list = service.productCommentList(prd_no);
 		/*List<ProductCommentDTO> list = service.productlist(category);
 		mav.addObject("prdlist", list);//db에서 조회한 결과 
 		                               //- 서블릿에서 request.setAttribute

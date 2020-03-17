@@ -18,8 +18,8 @@ public class ProductCommentServiceImpl implements ProductCommentService {
 	}
 
 	@Override
-	public int addComment() {
-		int resInsert = dao.addComment(ProductCommentDTO pComment);
+	public int addComment(ProductCommentDTO pComment) {
+		int resInsert = dao.addComment(pComment);
 		return resInsert;
 	}
 
