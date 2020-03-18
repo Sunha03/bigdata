@@ -115,15 +115,16 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>
 		
-		<!-- mongoDB -->
+		<!-- MongoDB -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb -->
 		<dependency>
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-mongodb</artifactId>
 		    <version>1.6.0.RELEASE</version>
 		</dependency>
-		
+
 	</dependencies>
     <build>
         <plugins>
